@@ -1,0 +1,49 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id:     457576742418338817       # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title:        "calculator"      # Project title
+  author:       "palpatine"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "adds numbers"      # One line description of what your project does
+  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "a"
+  ui[1]: "a"
+  ui[2]: "a"
+  ui[3]: "a"
+  ui[4]: "a"
+  ui[5]: "a"
+  ui[6]: "a"
+  ui[7]: "a"
+
+  # Outputs
+  uo[0]: "a"
+  uo[1]: "a"
+  uo[2]: "a"
+  uo[3]: "a"
+  uo[4]: "a"
+  uo[5]: "a"
+  uo[6]: "a"
+  uo[7]: "a"
+
+  # Bidirectional pins
+  uio[0]: "a"
+  uio[1]: "a"
+  uio[2]: "a"
+  uio[3]: "a"
+  uio[4]: "a"
+  uio[5]: "a"
+  uio[6]: "a"
+  uio[7]: "a"
+
+# Do not change!
+yaml_version: 6
