@@ -10,15 +10,15 @@ import klayout.db as pya
 seed(a=0)
 
 parser = argparse.ArgumentParser(
-    description="Replaces a given portion of a decap_12 cells with newfill_12 cells."
+    description="Replaces a given portion of a decap_3 cells with newfill_3 cells."
 )
 
 parser.add_argument("--probability", "-p", type=float, default=0.5, help="")
 
 parser.add_argument("--design-name", "-n", required=True)
 
-parser.add_argument("--from-cell-name", "-f", default="sky130_ef_sc_hd__decap_12")
-parser.add_argument("--to-cell-name", "-t", default="sky130_ef_sc_hd__newfill_12")
+parser.add_argument("--from-cell-name", "-f", default="sky130_fd_sc_hd__decap_3")
+parser.add_argument("--to-cell-name", "-t", default="sky130_tt_sc_hd__newfill_3")
 
 parser.add_argument("--user-gds", "-i", required=True)
 parser.add_argument("--replacement-gds", "-r", required=True)
