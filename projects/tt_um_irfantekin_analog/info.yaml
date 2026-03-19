@@ -1,0 +1,65 @@
+# Tiny Tapeout project information
+project:
+  title:        "tt_um_irfantekin_analog"      # tt_um_irfantekin_analog
+  author:       "irfan tekin"      # irfan tekin
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Analog Readout Circuit"      # One line description of what your project does
+  language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+
+  # How many analog pins does your project use?
+  analog_pins: 2        # Valid values: 0 to 6
+  uses_3v3: false       # Set to true if your project uses 3.3V (VAPWR) in addition to 1.8V (VDPWR)
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_irfantekin_analog"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "sw3"
+  ui[1]: "sw2"
+  ui[2]: "sw1"
+  ui[3]: "pd1"
+  ui[4]: "pd2"
+  ui[5]: "pd3"
+  ui[6]: "pd4"
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "bit1"
+  uo[1]: "bit2"
+  uo[2]: "bit3"
+  uo[3]: "bit4"
+  uo[4]: "bit5"
+  uo[5]: "bit6"
+  uo[6]: "bit7"
+  uo[7]: "bit8"
+
+  # Bidirectional pins
+  uio[0]: "csin1"
+  uio[1]: "csin2"
+  uio[2]: "csin3"
+  uio[3]: "csin4"
+  uio[4]: "csin5"
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
+  ua[0]: "IN"
+  ua[1]: "IN2"
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6
