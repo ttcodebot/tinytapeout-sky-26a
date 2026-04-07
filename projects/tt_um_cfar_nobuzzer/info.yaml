@@ -1,0 +1,46 @@
+
+project:
+  title: "CFAR Detector without Buzzer"
+  author: "Ilamparuthi G"
+  description: "A simplified CFAR-based signal detection system using 14-bit ADC input and 7-segment display output."
+  language: "Verilog"
+  clock_hz: 10000000
+
+  tiles: "1x1"
+
+  top_module: "tt_um_cfar_nobuzzer"
+
+  source_files:
+    - project.v
+    - cfar_core.v
+    - bcd_to_7seg.v
+
+pinout:
+  ui[0]: "ADC bit 0"
+  ui[1]: "ADC bit 1"
+  ui[2]: "ADC bit 2"
+  ui[3]: "ADC bit 3"
+  ui[4]: "ADC bit 4"
+  ui[5]: "ADC bit 5"
+  ui[6]: "ADC bit 6"
+  ui[7]: "ADC bit 7"
+
+  uio[0]: "ADC bit 8"
+  uio[1]: "ADC bit 9"
+  uio[2]: "ADC bit 10"
+  uio[3]: "ADC bit 11"
+  uio[4]: "ADC bit 12"
+  uio[5]: "ADC bit 13"
+  uio[6]: "unused"
+  uio[7]: "unused"
+
+  uo[0]: "7-seg a"
+  uo[1]: "7-seg b"
+  uo[2]: "7-seg c"
+  uo[3]: "7-seg d"
+  uo[4]: "7-seg e"
+  uo[5]: "7-seg f"
+  uo[6]: "7-seg g"
+  uo[7]: "Detection output"
+
+yaml_version: 6
