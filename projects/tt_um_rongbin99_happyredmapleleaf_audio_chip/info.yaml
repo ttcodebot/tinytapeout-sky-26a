@@ -1,0 +1,62 @@
+# Tiny Tapeout project information
+project:
+  title:        "Audio Wave Generator Chip"                                   # Project title
+  author:       "Rongbin Gu (@rongbin99), Evan Li (@happyredmapleleaf)"       # Your name
+  discord:      "rongbin99, evan.li"                                          # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Multi-channel Sound Wave Generator"                          # One line description of what your project does
+  language:     "Verilog"                                                     # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     28835840                                                      # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_rongbin99_happyredmapleleaf_audio_chip"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "audio_chip.v"
+    - "phase_counter.v"
+    - "pwm.v"
+    - "register_interface.v"
+    - "sine.v"
+    - "sync.v"
+    - "triangle.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "ADDR0"
+  ui[1]: "ADDR1"
+  ui[2]: "ADDR2"
+  ui[3]: "ADDR3"
+  ui[4]: "WRITE_PHASE"
+  ui[5]: "WRITE_EN"
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: ""
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: "PWM_OUT"
+
+  # Bidirectional pins
+  uio[0]: "REG_IN0"
+  uio[1]: "REG_IN1"
+  uio[2]: "REG_IN2"
+  uio[3]: "REG_IN3"
+  uio[4]: "REG_IN4"
+  uio[5]: "REG_IN5"
+  uio[6]: "REG_IN6"
+  uio[7]: "REG_IN7"
+
+# Do not change!
+yaml_version: 6
