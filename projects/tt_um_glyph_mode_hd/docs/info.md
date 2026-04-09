@@ -6,13 +6,14 @@ Matrix* Digital Rain effect.
 ![example VGA output](screenshot.png)
 
 Upon circuit reset, the glyphs will appear to fall from the top of the screen.
+Additionally, some glyphs will intermittently change.
 
-You can change the palette with the two pins, `ui_io[0]` and `ui_io[1]`.
+You can change the palette with the three pins, `ui_io[2:0]`.
 
 **NOTE** The default VGA timing requires a pixel clock of 25.175 MHz. If you
 want to drive higher resolutions, the base clock rate must be adjusted
-accordingly with the Clocks table below. You must also set the two pins,
-`ui_io[6]` and `ui_io[7]`, to select your preferred mode.
+accordingly with the Display Clocks table below. You must also set the two
+pins `ui_io[7:6]` to select your preferred mode.
 
 ## How to Test
 
@@ -22,27 +23,33 @@ timing modes, representing four different display resolutions, which must be
 both specifically clocked *and* have the pins `ui_io[7:6]` set according to the
 following table.
 
-### Clocks
+### Display Clocks
 
-**Pins 6 and 7 paired with pixel clock**
+**Pins 6 and 7 must be paired with pixel clock**
 
-| `ui_io[7:6]` | Clock (MHz) | VGA Timing Mode             |
-|-------------:|:------------|----------------------------:|
-|  (default) 0 | 25.175      |  640 x  480 @ 60 fps ( VGA) |
-|            1 | 40.0        |  800 x  600 @ 60 fps (SVGA) |
-|            2 | 34.694      |  960 x  540 @ 60 fps ( qHD) |
-|            3 | 64.0        | 1280 x  720 @ 60 fps (  HD) |
+| `ui_io[7:6]` | Clock (Hz) | VGA Timing Mode             |
+|-------------:|-----------:|----------------------------:|
+|  (default) 0 |   25175000 |  640 x  480 @ 60 fps ( VGA) |
+|            1 |   40000000 |  800 x  600 @ 60 fps (SVGA) |
+|            2 |   74250000 | 1280 x  720 @ 60 fps (  HD) |
+|            3 |   74250000 | 1920 x 1080 @ 30 fps ( FHD) |
  
-### Additional Palette Input
+### Palette Input
 
-The circuit accepts two pins `ui_io[0]` and `ui_io[1]` for palette selection:
+Use **Pins 0, 1, and 2** `ui_io[2:0]` for palette selection:
 
-| `ui_io[1:0]` | Palette |
-|-------------:|:--------|
-|  (default) 0 | Green   |
-|            1 | Red     |
-|            2 | Blue    |
-|            3 | Pride   |
+| `ui_io[2:0]` | Palette    |
+|-------------:|:-----------|
+|  (default) 0 | Green      |
+|            1 | Red        |
+|            2 | Blue       |
+|            3 | Grape Soda |
+|            4 | Hellfire   |
+|            5 | Monochrome |
+|            6 | Noir       |
+|            7 | Rainbow    |
+
+![Color Palettes](palettes.png)
 
 ## External hardware
 
