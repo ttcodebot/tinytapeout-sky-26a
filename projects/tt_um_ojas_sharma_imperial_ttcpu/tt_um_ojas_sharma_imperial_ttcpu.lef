@@ -85,7 +85,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN ui_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 135.550 110.520 135.850 111.520 ;
@@ -103,7 +103,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN ui_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 130.030 110.520 130.330 111.520 ;
@@ -121,7 +121,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 124.510 110.520 124.810 111.520 ;
@@ -139,7 +139,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 118.990 110.520 119.290 111.520 ;
@@ -294,6 +294,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.252000 ;
     ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
@@ -359,7 +360,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 3.717000 ;
+    ANTENNAGATEAREA 3.222000 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -399,7 +400,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.242000 ;
+    ANTENNAGATEAREA 0.873000 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -409,7 +410,7 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.611000 ;
+    ANTENNAGATEAREA 1.980000 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -440,11 +441,11 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.440 ;
+        RECT 2.760 2.480 158.240 109.780 ;
       LAYER met2 ;
-        RECT 18.310 2.535 151.710 110.685 ;
+        RECT 18.310 2.535 152.620 110.685 ;
       LAYER met3 ;
-        RECT 18.290 2.555 151.735 110.665 ;
+        RECT 18.290 2.555 145.755 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
@@ -487,15 +488,14 @@ MACRO tt_um_ojas_sharma_imperial_ttcpu
         RECT 136.250 110.120 137.910 110.665 ;
         RECT 139.010 110.120 140.670 110.665 ;
         RECT 141.770 110.120 143.430 110.665 ;
-        RECT 144.530 110.120 145.065 110.665 ;
-        RECT 30.655 109.440 145.065 110.120 ;
-        RECT 30.655 82.455 56.750 109.440 ;
-        RECT 59.150 82.455 60.050 109.440 ;
-        RECT 62.450 82.455 95.620 109.440 ;
-        RECT 98.020 82.455 98.920 109.440 ;
-        RECT 101.320 82.455 134.490 109.440 ;
-        RECT 136.890 82.455 137.790 109.440 ;
-        RECT 140.190 82.455 145.065 109.440 ;
+        RECT 30.655 109.440 144.145 110.120 ;
+        RECT 30.655 78.375 56.750 109.440 ;
+        RECT 59.150 78.375 60.050 109.440 ;
+        RECT 62.450 78.375 95.620 109.440 ;
+        RECT 98.020 78.375 98.920 109.440 ;
+        RECT 101.320 78.375 134.490 109.440 ;
+        RECT 136.890 78.375 137.790 109.440 ;
+        RECT 140.190 78.375 144.145 109.440 ;
   END
 END tt_um_ojas_sharma_imperial_ttcpu
 END LIBRARY
