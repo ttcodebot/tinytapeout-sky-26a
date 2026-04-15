@@ -1,0 +1,34 @@
+138. Printing statistics.
+
+=== tt_um_sar_fms ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       40        - wires
+       75        - wire bits
+       13        - public wires
+       48        - public wire bits
+        8        - ports
+       43        - port bits
+       56  556.784 cells
+        1    8.758   sky130_fd_sc_hd__a21o_2
+        1    8.758   sky130_fd_sc_hd__a21oi_2
+        1   11.261   sky130_fd_sc_hd__a41o_2
+        4   30.029   sky130_fd_sc_hd__and2_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+       14    52.55   sky130_fd_sc_hd__conb_1
+       13  276.515   sky130_fd_sc_hd__dfxtp_2
+        4   15.014   sky130_fd_sc_hd__inv_2
+        1    6.256   sky130_fd_sc_hd__nand2_2
+        1    8.758   sky130_fd_sc_hd__nand2b_2
+        1   15.014   sky130_fd_sc_hd__nor4b_2
+        3   30.029   sky130_fd_sc_hd__o211a_2
+        5   43.792   sky130_fd_sc_hd__o21a_2
+        2   17.517   sky130_fd_sc_hd__o21ai_2
+        2   12.512   sky130_fd_sc_hd__or2_2
+        1    10.01   sky130_fd_sc_hd__or4b_2
+
+   Chip area for module '\tt_um_sar_fms': 556.784000
+     of which used for sequential elements: 276.515200 (49.66%)
+
