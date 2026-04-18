@@ -140,7 +140,6 @@ MACRO tt_um_santhosh_ring_osc
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 118.990 110.520 119.290 111.520 ;
@@ -149,6 +148,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 110.520 116.530 111.520 ;
@@ -157,6 +157,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 113.470 110.520 113.770 111.520 ;
@@ -173,6 +174,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 107.950 110.520 108.250 111.520 ;
@@ -229,6 +231,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_oe[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 44.470 110.520 44.770 111.520 ;
@@ -277,7 +280,6 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 72.070 110.520 72.370 111.520 ;
@@ -286,7 +288,6 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 69.310 110.520 69.610 111.520 ;
@@ -312,6 +313,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 61.030 110.520 61.330 111.520 ;
@@ -320,6 +322,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 58.270 110.520 58.570 111.520 ;
@@ -328,6 +331,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 55.510 110.520 55.810 111.520 ;
@@ -336,6 +340,7 @@ MACRO tt_um_santhosh_ring_osc
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 52.750 110.520 53.050 111.520 ;
@@ -419,11 +424,11 @@ MACRO tt_um_santhosh_ring_osc
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.440 ;
+        RECT 2.760 2.480 158.540 109.040 ;
       LAYER met2 ;
-        RECT 18.310 2.535 155.840 110.685 ;
+        RECT 4.700 2.535 157.220 110.685 ;
       LAYER met3 ;
-        RECT 18.290 2.555 154.955 110.665 ;
+        RECT 9.265 2.555 154.035 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
@@ -468,13 +473,13 @@ MACRO tt_um_santhosh_ring_osc
         RECT 141.770 110.120 143.430 110.665 ;
         RECT 144.530 110.120 146.190 110.665 ;
         RECT 30.655 109.440 146.905 110.120 ;
-        RECT 30.655 99.455 56.750 109.440 ;
-        RECT 59.150 99.455 60.050 109.440 ;
-        RECT 62.450 99.455 95.620 109.440 ;
-        RECT 98.020 99.455 98.920 109.440 ;
-        RECT 101.320 99.455 134.490 109.440 ;
-        RECT 136.890 99.455 137.790 109.440 ;
-        RECT 140.190 99.455 146.905 109.440 ;
+        RECT 30.655 28.055 56.750 109.440 ;
+        RECT 59.150 28.055 60.050 109.440 ;
+        RECT 62.450 28.055 95.620 109.440 ;
+        RECT 98.020 28.055 98.920 109.440 ;
+        RECT 101.320 28.055 134.490 109.440 ;
+        RECT 136.890 28.055 137.790 109.440 ;
+        RECT 140.190 28.055 146.905 109.440 ;
   END
 END tt_um_santhosh_ring_osc
 END LIBRARY
