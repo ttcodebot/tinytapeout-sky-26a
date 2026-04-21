@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Tiniest GPU V2"      # Project title
+  title:        "Tiniest GPU V3"      # Project title
   author:       "Matt Pongsagon"      # Your name
   discord:      "pongsagon"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "A GPU with ..."      # One line description of what your project does
@@ -27,6 +27,7 @@ project:
     - "sine_rom.v"
     - "color_palette.v"
     - "gamepad_pmod.v"
+    - "shader_core.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
