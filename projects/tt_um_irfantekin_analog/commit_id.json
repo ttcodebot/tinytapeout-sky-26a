@@ -1,8 +1,8 @@
 {
   "app": "custom_gds action",
   "repo": "https://github.com/irfantekin/tt10-analog-readout",
-  "commit": "67f27d9959490d7230d240a1343aabf8970e8559",
-  "workflow_url": "https://github.com/irfantekin/tt10-analog-readout/actions/runs/24094231959",
+  "commit": "50dfaf7506c0adc2307de8198d46472b84b71213",
+  "workflow_url": "https://github.com/irfantekin/tt10-analog-readout/actions/runs/24730933654",
   "project_id": 4052,
   "sort_id": 1773939182666,
   "analog": true
