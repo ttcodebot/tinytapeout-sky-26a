@@ -61,7 +61,9 @@ jobs:
       - name: Patch librelane DRC to use gds maskhints
         working-directory: librelane
         run: |
-          sed -i '/^gds readonly true$/a gds maskhints yes' librelane/scripts/magic/drc.tcl
+          # Insert `gds maskhints yes` before the `gds read $CURRENT_GDS` call.
+          sed -i '/^    gds read \$::env(CURRENT_GDS)$/i\    gds maskhints yes' librelane/scripts/magic/drc.tcl
+          git diff
           git -c user.email=ci@tinytapeout -c user.name=ci commit -am "patch: gds maskhints yes (workaround)"
 
       - name: Update caravel configuration
