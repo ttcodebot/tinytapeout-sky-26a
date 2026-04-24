@@ -18,7 +18,7 @@ jobs:
       PDK_ROOT: ${{ github.workspace }}/pdk
       TT_CONFIG: sky130.yaml:../../mux_overrides.yaml
       # Uncomment the following line to build only the specified projects:
-      #TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test
+      TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test,tt_um_analog_atenfyr1
 
     runs-on: ubuntu-24.04
     steps:
@@ -51,6 +51,13 @@ jobs:
           repository: librelane/librelane
           path: librelane
           ref: ${{ env.LIBRELANE_TAG }}
+
+      # Workaround for librelane/librelane#928: magic's DRC on the final GDS
+      # flags valid analog layouts (e.g. rpm.1 on poly resistors) because the
+      # automatically-generated mask layers are narrower than the GDS ones.
+      # Using `gds maskhints yes` preserves the mask layers as drawn.
+      - name: Patch librelane DRC to use gds maskhints
+        run: sed -i '/^gds readonly true$/a gds maskhints yes' librelane/librelane/scripts/magic/drc.tcl
 
       - name: Update caravel configuration
         run: python ./tt/configure.py --update-shuttle
