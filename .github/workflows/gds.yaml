@@ -18,7 +18,7 @@ jobs:
       PDK_ROOT: ${{ github.workspace }}/pdk
       TT_CONFIG: sky130.yaml:../../mux_overrides.yaml
       # Uncomment the following line to build only the specified projects:
-      TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test,tt_um_analog_atenfyr1,tt_um_NE567Mixer28,tt_um_jyblue1001_pll,tt_um_yen,tt_um_microlane_demo
+      TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test,tt_um_NE567Mixer28
 
     runs-on: ubuntu-24.04
     steps:
@@ -52,12 +52,13 @@ jobs:
           path: librelane
           ref: ${{ env.LIBRELANE_TAG }}
 
-      # Workaround for librelane/librelane#928: magic's DRC on the final GDS
-      # flags valid analog layouts (e.g. rpm.1 on poly resistors) because the
-      # automatically-generated mask layers are narrower than the GDS ones.
-      # Using `gds maskhints yes` preserves the mask layers as drawn.
-      # Commit the change so the nix flake build sees it (flakes ignore
-      # uncommitted changes).
+      # Workaround for https://github.com/librelane/librelane/issues/928:
+      # magic's DRC on the final GDS flags valid analog layouts (e.g. rpm.1
+      # on poly resistors) because magic auto-regenerates mask layers
+      # narrower than the GDS ones. `gds maskhints yes` preserves the
+      # mask layers as drawn. Mirrors what tt/precheck/magic_drc.tcl
+      # already does. The change is committed inside the librelane
+      # checkout because the nix flake build ignores uncommitted changes.
       - name: Patch librelane DRC to use gds maskhints
         working-directory: librelane
         run: |
@@ -82,6 +83,17 @@ jobs:
           pdk_name: sky130
           pdk_version: ${{ env.SKY130_PDK_VERSION }}
           pdk_root: ${{ env.PDK_ROOT }}
+
+      # Workaround for https://github.com/RTimothyEdwards/open_pdks/pull/504:
+      # magic's `rpm_generate` CIF rule produces sub-1.27µm slivers between
+      # near-but-not-aligned poly-resistor instances, triggering false
+      # rpm.1 violations on analog designs. Patch the rule to enforce a
+      # 1.27µm minimum width during generation, before the width-check.
+      - name: Patch sky130.tech for rpm_generate min width
+        run: |
+          sed -i '/templayer rpm_generate$/{N;N;s/grow 620/grow 200\n grow-min 1270\n grow 420/}' \
+            ${{ env.PDK_ROOT }}/sky130A/libs.tech/magic/sky130A.tech
+          grep -A5 "templayer rpm_generate" ${{ env.PDK_ROOT }}/sky130A/libs.tech/magic/sky130A.tech | head -8
 
       # Patch all digital projects to work around the poly density issue
       - name: Patch projects for poly density issue
