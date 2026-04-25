@@ -69,6 +69,20 @@ jobs:
           pdk_version: ${{ env.SKY130_PDK_VERSION }}
           pdk_root: ${{ env.PDK_ROOT }}
 
+      # Workaround for analog rpm.1 false positives. Magic's `rpm_generate`
+      # CIF rule produces sub-1.27µm slivers between near-but-not-aligned
+      # poly-resistor instances (and from auto-regenerated rpm under-sized
+      # vs the GDS as-drawn — see librelane/librelane#928). The proposed
+      # PDK fix in https://github.com/RTimothyEdwards/open_pdks/pull/504
+      # (`grow-min 1270`) only handles rect-only geometry per magic's source
+      # comments. Verified with KLayout that the actual GDS rpm/urpm layers
+      # are width-compliant, so disabling the rpm.1 check is safe.
+      - name: Disable rpm.1 check in sky130A.tech (false positives)
+        run: |
+          sed -i 's|^ cifwidth rpm_generate 1270 |# DISABLED for false positives: \0|' \
+            ${{ env.PDK_ROOT }}/sky130A/libs.tech/magic/sky130A.tech
+          grep "cifwidth rpm_generate" ${{ env.PDK_ROOT }}/sky130A/libs.tech/magic/sky130A.tech
+
       # Patch all digital projects to work around the poly density issue
       - name: Patch projects for poly density issue
         working-directory: projects
