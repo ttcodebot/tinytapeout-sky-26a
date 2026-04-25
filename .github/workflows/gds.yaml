@@ -96,7 +96,6 @@ jobs:
         run: |
           tech=${{ env.PDK_ROOT }}/sky130A/libs.tech/magic/sky130A.tech
           sed -i '/templayer rpm_generate$/{N;N;s/grow 620/grow 200\n grow-min 1270\n grow 420/}' "$tech"
-          sed -i 's|^ cifwidth rpm_generate 1270 |# DISABLED for false positives: \0|' "$tech"
           grep -A5 "templayer rpm_generate" "$tech" | head -8
           grep "cifwidth rpm_generate" "$tech"
 
