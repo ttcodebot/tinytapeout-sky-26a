@@ -2,6 +2,11 @@ name: mpw_precheck
 
 on:
   workflow_dispatch:
+    inputs:
+      gds_run_id:
+        description: 'GDS workflow run ID to fetch foundry_submission from'
+        required: false
+        default: ''
   workflow_run:
     workflows: ['gds']
     types: [completed]
@@ -60,12 +65,12 @@ jobs:
       - name: Uncompress Caravel GDS
         run: make -C ${{ env.GOLDEN_CARAVEL }} uncompress
 
-      - name: Download artifact (run id = ${{ github.event.workflow_run.id }})
+      - name: Download artifact (run id = ${{ github.event.workflow_run.id || inputs.gds_run_id }})
         uses: dawidd6/action-download-artifact@v6
         id: download_artifact
         with:
           workflow: gds.yaml
-          run_id: ${{ github.event.workflow_run.id }}
+          run_id: ${{ github.event.workflow_run.id || inputs.gds_run_id }}
           workflow_conclusion: success
           name: foundry_submission
           path: tinytapeout-submission
@@ -136,12 +141,12 @@ jobs:
           pdk_version: ${{ env.SKY130_PDK_VERSION }}
           pdk_root: ${{ env.PDK_ROOT }}
 
-      - name: Download artifact (run id = ${{ github.event.workflow_run.id }})
+      - name: Download artifact (run id = ${{ github.event.workflow_run.id || inputs.gds_run_id }})
         uses: dawidd6/action-download-artifact@v6
         id: download_artifact
         with:
           workflow: gds.yaml
-          run_id: ${{ github.event.workflow_run.id }}
+          run_id: ${{ github.event.workflow_run.id || inputs.gds_run_id }}
           workflow_conclusion: success
           name: foundry_submission
           path: tinytapeout-submission
